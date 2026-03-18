@@ -65,15 +65,6 @@ jobs:
             exit 1
           fi
 
-      - name: 验证 IPv6 配置
-        run: |
-          echo "--- WARP Status ---"
-          sudo warp-cli --accept-tos status
-          echo "--- Public IPv6 Address ---"
-          curl -6 -s https://ifconfig.co
-          echo "--- Ping6 Test ---"
-          ping6 -c 4 ipv6.google.com || echo "Ping6 may be blocked, but IPv6 for HTTP is working."
-
       - name: 运行脚本
         run: |
           chmod +x assets/whitelist-blacklist/main.py
