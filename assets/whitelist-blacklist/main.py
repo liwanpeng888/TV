@@ -402,12 +402,12 @@ class StreamChecker:
                 
                 if processed % 50 == 0:
                     valid = sum(1 for _, t in success if t > 0)
-                    logger.info(f"进度: {processed}/{total} | 有效: {valid} | 白名单失败: {len(success)-valid} | 新失败: {len(failed)}")
+                    logger.info(f"进度: {processed}/{total} | 有效: {valid} | 新失败: {len(failed)}")
         
         # 按响应时间排序
         success.sort(key=lambda x: x[1])
         valid = sum(1 for _, t in success if t > 0)
-        logger.info(f"检测完成 - 有效: {valid} | 白名单失败: {len(success)-valid} | 新失败: {len(failed)}")
+        logger.info(f"检测完成 - 有效: {valid} | 新失败: {len(failed)}")
         
         return success, failed
 
