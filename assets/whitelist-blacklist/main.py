@@ -49,7 +49,7 @@ class Config:
     TIMEOUT_READ = 1.5      # 套接字读取超时
     
     # 并发配置
-    MAX_WORKERS = 16        # 最大并发检测线程数
+    MAX_WORKERS = 25        # 最大并发检测线程数
     MAX_RETRIES = 0         # 检测重试次数（0=不重试）
 
 # 链接有效性检测核心类
